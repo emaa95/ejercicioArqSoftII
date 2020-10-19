@@ -2,7 +2,7 @@
 
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
 	
-	<persistence-unit name="ar.edu.ucc.base" transaction-type="RESOURCE_LOCAL">
+	<persistence-unit name="ar.edu.ucc.dvdRental" transaction-type="RESOURCE_LOCAL">
 	
 		<description>
             Persistence unit for local mysql.
