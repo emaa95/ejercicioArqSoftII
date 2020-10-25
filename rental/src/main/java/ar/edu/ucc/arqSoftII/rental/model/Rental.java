@@ -17,11 +17,11 @@ public class Rental extends GenericObject {
     @Column(name = "RENTALDATE")
     private Date rentalDate;
 
-    @OneToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "MEMBER_ID")
     private Member member;
 
-    @OneToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "FILM_ID")
     private Film film;
 

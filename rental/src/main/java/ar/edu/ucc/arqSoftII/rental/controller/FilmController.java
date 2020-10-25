@@ -25,7 +25,7 @@ public class FilmController {
     @RequestMapping(value="/{id}", method=RequestMethod.GET, produces= MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody FilmResponseDto lookupStateById(@PathVariable("id") Long id)
     {
-        return filmService.getStateById(id);
+        return filmService.getFilmById(id);
     }
 
     @RequestMapping(method=RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces= MediaType.APPLICATION_JSON_VALUE)

@@ -18,14 +18,21 @@ public class FilmService {
 
     @Autowired
     private FilmDao filmDao;
+	
+	public FilmResponseDto getFilmById (Long id) {
+		
+		Film film = filmDao.load(id);
+		
+		FilmResponseDto dto = new FilmResponseDto();
+		dto.setTitle(film.getTitle());
+		dto.setSynopsis(film.getSynopsis());
+		dto.setYear(film.getYear());
+		dto.setGender(film.getGender());
+		return dto;
+		
+	}
 
-    public FilmResponseDto getStateById(Long id) {
-        Film film = filmDao.load(id);
-
-        FilmResponseDto response = (FilmResponseDto) new ModelDtoConverter().convertToDto(film, new FilmResponseDto());
-        return response;
-    }
-
+ 
     public List<FilmResponseDto> getAllFilms() {
         List<Film> films = filmDao.getAll();
 
